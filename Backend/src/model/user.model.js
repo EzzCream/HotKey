@@ -6,28 +6,32 @@ const Schema = new mongoose.Schema(
 			type: String,
 			require: true,
 		},
-		price: {
-			type: Number,
-			require: true,
-		},
-		category: {
+		lastname: {
 			type: String,
 			require: true,
+		},
+		password: {
+			type: String,
+			required: true,
+		},
+		email: {
+			type: String,
+			required: true,
+		},
+		direction: {
+			type: String,
+			required: true,
+		},
+		age: {
+			type: Number,
+			required: true,
+		},
+		number: {
+			type: String,
+			required: true,
 		},
 		img: {
 			type: String,
-			require: true,
-		},
-		description: {
-			type: String,
-			require: true,
-		},
-		stock: {
-			type: Number,
-			require: true,
-		},
-		rating: {
-			type: Number,
 			require: true,
 		},
 	},
@@ -36,4 +40,4 @@ const Schema = new mongoose.Schema(
 	},
 );
 
-export const ProductModel = mongoose.model('product', Schema);
+export const UserModel = mongoose.model('user', Schema);
