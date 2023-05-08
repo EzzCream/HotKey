@@ -26,30 +26,25 @@ npm run dev - Para correr la app
 
 ## Variables de entorno
 
-El proyecto hace uso de Firebase-Firestore por lo que hay elementos que se tienen que proteger... Por esta razon este proyecto tiene variables de entorno. Puedes ver un ejemplo en el .env.ejemplo de las variables necesarias
+El proyecto hace uso de MongoDB por lo cual vas a tener que generar la conexion a tu base de datos por medio de las variables de entorno, hay un .env.example en el cual puedes ver dode tienes que poner tu ruta de acceso a la base de datos
 
-## Componentes creados
+## Tecnologias utilizadas
 
--   NavBar
-    -   Es la barra de navegacion, esta se encarga de facilitarnos el movimiento por la pagina
--   Item, Item List y Item List Container
-    -   Item: Aqui es lo que nos porporciona la informacion general de lo que es item
-    -   Itemlist: Esta es la parte que se encarga de decir cuales items se van a mostrar
-    -   ItemListCotainer: Es el contenedor que va a guardar los item listados
--   ItemCount
-    -   El cotador donde puedes agregar tus productos
--   ItemDetal y ItemDetailContainer
-    -   Se muestra el detalle del item que sea deseado
-    -   Y el contenedor es donde se almacena la informacion de item con el contador para que se agregue algun producto
--   CartWidget
-    -   El icono del
--   Loading
-    -   Componente dedicado para mostrar el loading
--   Inicio
-    -   Muestra el inicio de la pagina
--   Cart y CartDetail
-    -   Cart: La informacion que se muestra en el carrito
-    -   CartDetail: Muestra el detalle de los productos que se agregaron al carrito
--   Finalizar y Orden
-    -   Finalizar: Se muestra al finalizar la compra, se encuentra un formulario, en el cual tienes que poner los datos de envio y un resumen de la compra
-    -   Orden: Muestra el id de orden y un link para regresar a ver los productos
+-   React
+    -   React router dom
+    -   Axios
+    -   Bootstrap
+    -   Custom Hooks
+    -   Context
+    -   Vite
+-   Node JS
+    -   Express
+    -   Bcrypt
+    -   Cors
+    -   Dotenv
+    -   JWT
+    -   Log4js
+    -   Mongoose
+    -   MVC
+-   MongoDB
+
