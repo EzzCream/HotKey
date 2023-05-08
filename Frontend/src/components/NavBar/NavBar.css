@@ -4,3 +4,16 @@
 .imgLogo {
 	width: 40px;
 }
+.infoUser {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.infoUser > p {
+	margin-right: 10px;
+}
+.infoUser > button {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}

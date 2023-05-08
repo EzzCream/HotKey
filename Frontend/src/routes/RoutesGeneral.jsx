@@ -5,8 +5,8 @@ import { RoutesProducts } from './RoutesProducts.jsx';
 export const RoutesGeneral = () => {
 	return (
 		<Routes>
-			<Route path="/login" element={<RoutesSign />} />
-			<Route path="/*" element={<RoutesProducts />} />
+			<Route path="login/*" element={<RoutesSign />} />
+			<Route path="*" element={<RoutesProducts />} />
 		</Routes>
 	);
 };

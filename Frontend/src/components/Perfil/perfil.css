@@ -1,0 +1,20 @@
+.contPerfil {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+.infoPerfil {
+	width: 1000px;
+	box-shadow: 0 0 15px 15px rgb(214, 214, 214);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
+}
+.infoPerfil > img {
+	width: 300px;
+	border-radius: 50%;
+}

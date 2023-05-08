@@ -1,0 +1,20 @@
+.container-info {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 30px;
+}
+.infoProd,
+.imgProdCont {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 90vh;
+}
+.imgProd {
+	max-width: 300px;
+}

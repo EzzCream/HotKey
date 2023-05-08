@@ -1,6 +1,5 @@
 import { logger } from '../config/logs.config.js';
 import { UserModel } from '../model/user.model.js';
-import { directionServer } from '../util/global.js';
 import jwt from 'jsonwebtoken';
 
 import bcrypt from 'bcrypt';
@@ -11,11 +10,11 @@ export async function signup(req, res) {
 		const email = user.email;
 		const userExist = await UserModel.findOne({ email });
 		if (userExist) {
-			res.status(406).send('User exist');
+			res.status(204).send('User exist');
 		} else {
 			const newUser = {
 				...user,
-				img: directionServer + '/default.jpeg',
+				img: '/default.jpeg',
 				password: bcrypt.hashSync(
 					user.password,
 					bcrypt.genSaltSync(10),
@@ -45,10 +44,10 @@ export async function login(req, res) {
 					});
 				});
 			} else {
-				res.status(404).send('Error password');
+				res.status(204).send('Error password');
 			}
 		} else {
-			res.status(404).send('Error email');
+			res.status(204).send('Error email');
 		}
 	} catch (error) {
 		logger.error(error);

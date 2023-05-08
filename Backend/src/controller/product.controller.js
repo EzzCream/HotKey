@@ -18,7 +18,6 @@ export async function getProduct(req, res) {
 	try {
 		const { id } = req.params;
 		const product = await ProductModel.findById(id);
-		console.log(product);
 		if (product === null) {
 			res.status(404).send('Product not found');
 		} else {

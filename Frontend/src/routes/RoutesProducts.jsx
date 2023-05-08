@@ -1,6 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { Products } from '../components/Product/Products.jsx';
 import { NavBar } from '../components/NavBar/NavBar.jsx';
+import { InfoProd } from '../components/InfoProd/InfoProd.jsx';
+import { Home } from '../components/Home/Home.jsx';
+import { Perfil } from '../components/Perfil/Perfil.jsx';
+import { Cart } from '../components/Cart/Cart.jsx';
 
 export const RoutesProducts = () => {
 	return (
@@ -8,6 +12,10 @@ export const RoutesProducts = () => {
 			<NavBar />
 			<Routes>
 				<Route path="products" element={<Products />} />
+				<Route path="products/:productId" element={<InfoProd />} />
+				<Route path="" element={<Home />} />
+				<Route path="/MiPerfil" element={<Perfil />} />
+				<Route path="/Cart" element={<Cart />} />
 			</Routes>
 		</>
 	);

@@ -2,20 +2,32 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import img from './logob.png';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import User from '../../context/Provider.jsx';
+import { NavInfo } from './NavInfo.jsx';
 
 export const NavBar = () => {
+	const { user } = useContext(User);
+
 	return (
 		<>
 			<Navbar className="navbar" bg="light" expand="lg">
-				<Navbar.Brand href="#home">
+				<Link to="/" className="m-2">
 					<img src={img} alt="logo" className="imgLogo" />
-				</Navbar.Brand>
+				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#link">Link</Nav.Link>
+						<Link to="/products">Productos</Link>
 					</Nav>
+					{user.length === 0 ? (
+						<Link to="/login/signin" className="m-3">
+							Login
+						</Link>
+					) : (
+						<NavInfo />
+					)}
 				</Navbar.Collapse>
 			</Navbar>
 		</>
