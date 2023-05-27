@@ -1,4 +1,4 @@
-# MichiStore 🐈
+# HotKey
 
 ![imagen](./Frontend/public/logo.png)
 
