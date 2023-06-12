@@ -1,6 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import img from './logob.png';
+import img from './logotipo.png';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';

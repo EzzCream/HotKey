@@ -18,3 +18,11 @@
 .imgProd {
 	max-width: 300px;
 }
+.control {
+	background-color: transparent;
+	width: 25px;
+	height: 25px;
+	margin: 5px;
+	border: 1px solid black;
+	border-radius: 50%;
+}

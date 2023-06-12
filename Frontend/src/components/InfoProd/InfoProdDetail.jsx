@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './infoProdDetail.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import User from '../../context/Provider.jsx';
 import { linkBack } from '../../helpers/global.js';
 import axios from 'axios';
@@ -17,16 +17,30 @@ export const InfoProdDetail = ({
 }) => {
 	const { user } = useContext(User);
 
+	const [amountC, setAmountC] = useState(1);
+	const [val, setVal] = useState(0);
+
+	const setMore = () => {
+		if (amountC < stock) {
+			setAmountC(amountC + 1);
+		}
+	};
+	const setLess = () => {
+		if (amountC > 1) {
+			setAmountC(amountC - 1);
+		}
+	};
+
 	const add = async (e) => {
 		e.preventDefault();
-		const userCall = await axios.post(
+		await axios.post(
 			linkBack + '/api/cart/' + user.user._id,
 			{
 				id: _id,
 				name,
 				price,
 				description,
-				amount: 1,
+				amount: amountC,
 				img,
 			},
 			{
@@ -35,6 +49,7 @@ export const InfoProdDetail = ({
 				},
 			},
 		);
+		setVal(1);
 	};
 
 	return (
@@ -70,25 +85,68 @@ export const InfoProdDetail = ({
 						</svg>
 					</Link>
 				) : (
-					<button className="cta mb-2" onClick={add}>
-						<span className="hover-underline-animation">
-							Agregar al carrito
-						</span>
-						<svg
-							viewBox="0 0 46 16"
-							height="10"
-							width="30"
-							xmlns="http://www.w3.org/2000/svg"
-							id="arrow-horizontal"
-						>
-							<path
-								transform="translate(30)"
-								d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-								data-name="Path 10"
-								id="Path_10"
-							></path>
-						</svg>
-					</button>
+					<div>
+						{val > 0 ? (
+							<div>
+								<Link to="/Cart" className="cta mb-2">
+									<span className="hover-underline-animation">
+										Proceder a pagar
+									</span>
+									<svg
+										viewBox="0 0 46 16"
+										height="10"
+										width="30"
+										xmlns="http://www.w3.org/2000/svg"
+										id="arrow-horizontal"
+									>
+										<path
+											transform="translate(30)"
+											d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+											data-name="Path 10"
+											id="Path_10"
+										></path>
+									</svg>
+								</Link>
+							</div>
+						) : (
+							<div>
+								<div>
+									Cantidad: {amountC}
+									<button
+										className="control"
+										onClick={setMore}
+									>
+										+
+									</button>
+									<button
+										className="control"
+										onClick={setLess}
+									>
+										-
+									</button>
+								</div>
+								<button className="cta mb-2" onClick={add}>
+									<span className="hover-underline-animation">
+										Agregar al carrito
+									</span>
+									<svg
+										viewBox="0 0 46 16"
+										height="10"
+										width="30"
+										xmlns="http://www.w3.org/2000/svg"
+										id="arrow-horizontal"
+									>
+										<path
+											transform="translate(30)"
+											d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+											data-name="Path 10"
+											id="Path_10"
+										></path>
+									</svg>
+								</button>
+							</div>
+						)}
+					</div>
 				)}
 			</div>
 		</div>

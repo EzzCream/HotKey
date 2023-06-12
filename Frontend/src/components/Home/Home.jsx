@@ -1,12 +1,12 @@
 import './home.css';
-import img from './logob.png';
+import img from './logob.jpeg';
 
 export const Home = () => {
 	return (
 		<div className="home">
 			<div className="portada">
 				<img className="logoPortada" src={img} alt="logo" />
-				<h1 className="display-1 name">HotKey</h1>
+				<h1 className="display-1 name font m-1">PhantomSneakers</h1>
 			</div>
 			<div className="acerca">
 				<div className="acerca cuadro">
