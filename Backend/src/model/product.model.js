@@ -14,6 +14,10 @@ const Schema = new mongoose.Schema(
 			type: String,
 			require: true,
 		},
+		brand: {
+			type: String,
+			require: true,
+		},
 		img: {
 			type: String,
 			require: true,
@@ -23,7 +27,7 @@ const Schema = new mongoose.Schema(
 			require: true,
 		},
 		stock: {
-			type: Number,
+			type: Array,
 			require: true,
 		},
 		rating: {

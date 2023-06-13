@@ -10,13 +10,13 @@ export const InfoProdDetail = ({
 	price,
 	category,
 	img,
+	brand,
 	description,
 	rating,
-	stock,
 	_id,
 }) => {
 	const { user } = useContext(User);
-
+	const stock = 1;
 	const [amountC, setAmountC] = useState(1);
 	const [val, setVal] = useState(0);
 
@@ -60,6 +60,7 @@ export const InfoProdDetail = ({
 			<div className="infoProd m-3">
 				<h1 className="display-3">{name}</h1>
 				<h3>Categoria: {category}</h3>
+				<h3>Marca: {brand}</h3>
 				<p>{description}</p>
 				<p>$ {price}</p>
 				<p>Aun quedan: {stock}</p>

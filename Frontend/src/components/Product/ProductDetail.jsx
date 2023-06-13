@@ -8,7 +8,7 @@ export const ProductDetail = ({ name, img, price, _id }) => {
 				<img className="imgCard" src={img} alt={name} />
 			</div>
 			<p className="title">{name}</p>
-			<p className="price">{price}</p>
+			<p className="price">${price}</p>
 			<Link to={`/products/${_id}`} className="cta">
 				<span className="hover-underline-animation"> Detalles </span>
 				<svg
