@@ -16,7 +16,7 @@ export const InfoProdDetail = ({
 	_id,
 }) => {
 	const { user } = useContext(User);
-	const stock = 1;
+	const stock = 20;
 	const [amountC, setAmountC] = useState(1);
 	const [val, setVal] = useState(0);
 
@@ -51,6 +51,8 @@ export const InfoProdDetail = ({
 		);
 		setVal(1);
 	};
+
+	console.log(user.token);
 
 	return (
 		<div className="container-info">

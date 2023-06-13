@@ -8,4 +8,6 @@ router.post('/:id', verifyToken, Cart.addToCart);
 
 router.get('/:id', verifyToken, Cart.getCart);
 
+router.post('/:id/:idProd', verifyToken, Cart.deleteFromCart);
+
 export default router;

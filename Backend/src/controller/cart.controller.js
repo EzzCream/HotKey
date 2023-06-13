@@ -49,3 +49,17 @@ export async function getCart(req, res) {
 		logger.error(error);
 	}
 }
+
+export async function deleteFromCart(req, res) {
+	try {
+		const { id, idProd } = req.params;
+		const cart = await CartModels.findOne({ userID: id });
+		const arr = cart.products;
+		const products = arr.filter((prod) => prod.id != idProd);
+		cart.products = products;
+		await CartModels.updateOne({ userID: id }, { cart });
+		res.status(200).json('holi');
+	} catch (error) {
+		logger.error(error);
+	}
+}
