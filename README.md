@@ -1,6 +1,6 @@
 # PhantomSneakers 
 
-![imagen](./Frontend/public/logo.png)
+![imagen](./Frontend/public/logotipo.png)
 
 PhantomSneakers, la tienda por excelencia para comprar tus tennis al mejor precio
 
