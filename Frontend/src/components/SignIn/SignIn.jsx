@@ -1,5 +1,5 @@
 import './signin.css';
-import img from './logob.png';
+import img from './logob.jpeg';
 import { Link, Navigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm.js';
 import axios from 'axios';
@@ -22,6 +22,7 @@ export const SignIn = () => {
 		const user = await axios.post(linkBack + '/api/user/login', form);
 		if (user.status === 202) {
 			setUser(user.data);
+			localStorage.setItem('User', JSON.stringify(user.data));
 			setNavigate(true);
 		} else {
 			setLogin(false);
@@ -41,23 +42,26 @@ export const SignIn = () => {
 				<div className="form">
 					<h2>Login</h2>
 					<p>Correo</p>
-					<input
-						type="email"
-						name="email"
-						value={email}
-						onChange={inputChange}
-						className="form-control mb-3"
-						placeholder="Correo"
-					/>
-					<p>Contraseña</p>
-					<input
-						type="password"
-						className="form-control mb-3"
-						name="password"
-						value={password}
-						onChange={inputChange}
-						placeholder="Contraseña"
-					/>
+					<form>
+						<input
+							type="email"
+							name="email"
+							value={email}
+							onChange={inputChange}
+							className="form-control mb-3"
+							placeholder="Correo"
+						/>
+						<p>Contraseña</p>
+						<input
+							type="password"
+							className="form-control mb-3"
+							name="password"
+							value={password}
+							onChange={inputChange}
+							placeholder="Contraseña"
+							autoComplete="off"
+						/>
+					</form>
 					{!login ? (
 						<p style={{ color: 'red' }}>
 							Correo o password invalido

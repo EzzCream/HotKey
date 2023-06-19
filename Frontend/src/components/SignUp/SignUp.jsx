@@ -1,4 +1,4 @@
-import img from './logob.png';
+import img from './logob.jpeg';
 import { Navigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm.js';
 import axios from 'axios';

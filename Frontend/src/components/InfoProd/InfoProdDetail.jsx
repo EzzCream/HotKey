@@ -52,8 +52,6 @@ export const InfoProdDetail = ({
 		setVal(1);
 	};
 
-	console.log(user.token);
-
 	return (
 		<div className="container-info">
 			<div className="imgProdCont m-3">

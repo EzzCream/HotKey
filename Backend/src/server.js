@@ -6,6 +6,7 @@ import './config/db.config.js';
 import Products from './route/product.route.js';
 import User from './route/user.route.js';
 import Cart from './route/cart.route.js';
+import Orden from './route/orden.route.js';
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use('/api/product', Products);
 app.use('/api/user', User);
 app.use('/api/cart', Cart);
+app.use('/api/orden', Orden);
 
 const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {

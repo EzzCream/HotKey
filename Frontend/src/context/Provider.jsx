@@ -1,10 +1,16 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const User = createContext();
 
 export const Provider = ({ children }) => {
 	const [user, setUser] = useState([]);
 	const [state, setState] = useState(0);
+	const [cart, setCart] = useState([]);
+
+	const userSave = JSON.parse(localStorage.getItem('User'));
+	if (userSave && user === []) {
+		setUser(userSave);
+	}
 
 	return (
 		<User.Provider
@@ -13,6 +19,8 @@ export const Provider = ({ children }) => {
 				setUser,
 				state,
 				setState,
+				cart,
+				setCart,
 			}}
 		>
 			{children}

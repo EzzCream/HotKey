@@ -4,7 +4,7 @@
 	align-items: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	height: 100vh;
+	margin: 30px;
 }
 .cartCard {
 	display: flex;
@@ -12,4 +12,11 @@
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
+}
+.cont-cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
 }

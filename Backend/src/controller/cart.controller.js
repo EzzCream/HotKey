@@ -57,8 +57,8 @@ export async function deleteFromCart(req, res) {
 		const arr = cart.products;
 		const products = arr.filter((prod) => prod.id != idProd);
 		cart.products = products;
-		await CartModels.updateOne({ userID: id }, { cart });
-		res.status(200).json('holi');
+		await CartModels.updateOne({ userID: id }, cart);
+		res.status(200).send('deleted from the cart');
 	} catch (error) {
 		logger.error(error);
 	}
