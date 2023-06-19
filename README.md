@@ -4,10 +4,6 @@
 
 PhantomSneakers, la tienda por excelencia para comprar tus tennis al mejor precio
 
-### Preview de la pagina ✨
-
-![Preview Img](./Frontend/public/video.gif)
-
 ## ¿Como empezamos?
 
 Empecemos haciendo lo necesario para correr el proyecto 😁
