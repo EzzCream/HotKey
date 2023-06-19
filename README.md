@@ -1,10 +1,8 @@
-# MichiStore 🐈
+# PhantomSneakers 
 
 ![imagen](./Frontend/public/logo.png)
 
-HotKey, la tienda por excelencia para comprar tus teclados y switches para teclados ✨
-
-Esta aplicacion fue creada con Mongo, Express, React y NodeJS
+PhantomSneakers, la tienda por excelencia para comprar tus tennis al mejor precio
 
 ### Preview de la pagina ✨
 
