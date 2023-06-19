@@ -8,7 +8,7 @@ export const Provider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
 	const userSave = JSON.parse(localStorage.getItem('User'));
-	if (userSave && user === []) {
+	if (userSave && user == []) {
 		setUser(userSave);
 	}
 

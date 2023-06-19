@@ -10,7 +10,6 @@ export const Cart = () => {
 	const { user, setUser, state, setState, cart, setCart } = useContext(User);
 
 	useEffect(() => {
-
 		const call = async () => {
 			const cartCall = await axios.get(
 				linkBack + '/api/cart/' + user.user._id,
@@ -28,7 +27,7 @@ export const Cart = () => {
 
 	return (
 		<div className="cont-cart">
-			<h2 className="display-1">Carrito</h2>
+			<h2 className="display-1 font">Carrito</h2>
 			<div className="cartCont">
 				{cart.map((prod) => (
 					<CartDetail key={prod.id} {...prod} />

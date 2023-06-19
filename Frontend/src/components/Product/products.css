@@ -1,3 +1,12 @@
+.oferta {
+	width: auto;
+}
+@media (max-width: 844px) {
+	.oferta {
+		width: 100%;
+	}
+}
+
 .contProd {
 	display: flex;
 	justify-content: center;
@@ -5,16 +14,16 @@
 	flex-wrap: wrap;
 }
 .cardProd {
-	width: 210px;
-	height: 350px;
+	width: 310px;
+	height: 450px;
 	margin: 20px;
 	box-shadow: 0 0 10px 10px rgb(235, 235, 235);
 	padding: 10px;
 	border-radius: 10px;
 }
 .imgCard {
-	width: 190px;
-	height: 200px;
+	width: 290px;
+	height: 300px;
 	object-fit: contain;
 }
 p {
