@@ -31,8 +31,8 @@ export async function createPayment(req, res) {
 			brand_name: 'PhantomSneakers',
 			landing_page: 'NO_PREFERENCE',
 			user_action: 'PAY_NOW',
-			return_url: 'http://localhost:8080/api/orden/execute-payment',
-			cancel_url: 'http://localhost:8080/api/orden/cancel-payment',
+			return_url: '/api/orden/execute-payment',
+			cancel_url: '/api/orden/cancel-payment',
 		},
 	};
 
