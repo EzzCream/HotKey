@@ -1,10 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import User from '../../context/Provider.jsx';
 import './orden.css';
 import axios from 'axios';
 import { linkBack } from '../../helpers/global.js';
 
 export const Orden = () => {
+	const [newPrice, setNewPrice] = useState(0);
+	// const [total, setTotal] = useState(0);
+
 	useEffect(() => {
 		const userSave = JSON.parse(localStorage.getItem('User'));
 		if (userSave) {
@@ -13,11 +16,32 @@ export const Orden = () => {
 	}, []);
 	const { user, setUser, cart } = useContext(User);
 
+	useEffect(() => {
+		const handleMessage = (event) => {
+			if (event.data?.type === 'product-selected') {
+				const selectedProduct = event.data.data;
+				console.log(
+					'Producto seleccionado desde iframe:',
+					selectedProduct.price,
+				);
+				console.log(typeof selectedProduct.price);
+				setNewPrice(parseInt(selectedProduct.price) + total);
+				// total = total + selectedProduct.price;
+			}
+		};
+
+		window.addEventListener('message', handleMessage);
+
+		return () => window.removeEventListener('message', handleMessage);
+	}, []);
+
 	let total = 0;
 	cart.map((res) => {
 		const subPrice = res.price * res.amount;
 		total = subPrice + total;
 	});
+
+	// setNewPrice(total);
 
 	const obj = {
 		userID: user.user._id,
@@ -27,6 +51,10 @@ export const Orden = () => {
 	};
 
 	const pay = async () => {
+		if (newPrice != 0) {
+			obj.total = newPrice;
+		}
+		console.log(obj);
 		const link = await axios.post(
 			linkBack + '/api/orden/create-payment/' + user.user._id,
 			obj,
@@ -50,7 +78,22 @@ export const Orden = () => {
 						</p>
 					</div>
 				))}
-				<h3>Total: {total}</h3>
+				{newPrice != 0 ? (
+					<div>
+						<p>Insurance price: {newPrice - total}</p>
+
+						<h3>Toal: {newPrice}</h3>
+					</div>
+				) : (
+					<h3>Total: {total}</h3>
+				)}
+				<iframe
+					src="https://backend-rommaana.onrender.com/api/offer/getOfferHtml/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NDM0ODc1MH0.rvo3rVEZvvfyqqBdfZ9uvlbBOlMRKfE1rwhkaJ_F4Aw"
+					width="100%"
+					height="650"
+					frameBorder="0"
+					title="Rommaana"
+				></iframe>
 				<button onClick={pay} className="cta mb-2">
 					<span className="hover-underline-animation">
 						Pagar con PayPal
