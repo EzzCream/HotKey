@@ -26,9 +26,7 @@ export const Products = () => {
 
 	return (
 		<div className="prodCont">
-			<div>
-				<img src={imgOferta} className="oferta" alt="" />
-			</div>
+			<div>{/* <img src={imgOferta} className="oferta" alt="" /> */}</div>
 			<h2 className="display-3 font">Productos</h2>
 			<div className="contProd">
 				{data.map((prod) => (
