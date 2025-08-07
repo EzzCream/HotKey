@@ -94,12 +94,6 @@ export const Orden = () => {
 					frameBorder="0"
 					title="Rommaana"
 				></iframe>
-				<button class="payment-btn tabby-btn mb-2 mt-2">
-					Pagar con Tabby
-				</button>
-				<button class="payment-btn tamara-btn mb-2">
-					Pagar con Tamara
-				</button>
 				<button onClick={pay} className="cta mb-2">
 					<span className="hover-underline-animation">
 						Pagar con PayPal
